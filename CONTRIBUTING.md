@@ -1,0 +1,3 @@
+# Contributing
+
+Use Python 3.10+ in a virtual environment. Install `pip install -e '.[dev]'`; run `pytest -q`, `ruff check .`, and `ruff format --check .` before opening a pull request. Add tests for every change in preprocessing, splitting, model selection, or metrics. Keep test labels and outputs synthetic; never commit proprietary, sensitive, or large raw sensor data. Do not adjust methodology after examining the final test metrics unless explicitly labeling the test set as development data and collecting new external evaluation data. Document breaking CLI/config changes. Cite original dataset authors in any public results.

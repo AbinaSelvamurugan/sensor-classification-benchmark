@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.py[cod]
+data/UCI HAR Dataset/
+data/*.zip
+results/*
+!results/README.md
+.ipynb_checkpoints/
+*.egg-info/
+# Local tooling and OS files
+.DS_Store
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+.coverage
+htmlcov/
+build/
+dist/
+*.log

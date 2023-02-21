@@ -1,0 +1,3 @@
+models: [dummy, logistic_regression, decision_tree, random_forest, rbf_svm]
+selection_tolerance: 0.005
+search_iterations: 6

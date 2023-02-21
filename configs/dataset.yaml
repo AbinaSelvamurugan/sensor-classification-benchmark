@@ -1,0 +1,13 @@
+kind: uci_har
+path: data/UCI HAR Dataset
+# For custom data: kind: csv; path: data/your.csv; target_column: label
+# optional: group_column: subject_id; time_column: time; drop_columns: [record_id]
+# For independent rows use split_strategy: stratified;
+# for grouped rows use split_strategy: group;
+# for chronological data use split_strategy: chronological.
+target_column: activity
+split_strategy: official
+holdout_fraction: 0.25
+group_column: subject
+# time_column: null
+drop_columns: []

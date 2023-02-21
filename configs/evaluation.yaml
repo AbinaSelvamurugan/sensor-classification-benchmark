@@ -1,0 +1,5 @@
+seed: 42
+folds: 3
+primary_metric: macro_f1
+bootstrap_replicates: 300
+n_jobs: 1

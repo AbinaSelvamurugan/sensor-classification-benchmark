@@ -1,0 +1,3 @@
+numeric_imputer: median
+categorical_imputer: most_frequent
+scale_linear: true

@@ -109,3 +109,31 @@ For contributions, consult `CONTRIBUTING.md`. For setup issues consult `docs/tro
 ## Continuous integration
 
 The repository ships a Python test workflow at `.github/workflows/ci.yml`. Run the download and benchmark commands above to generate results.
+
+## Real-data run (9 November 2023)
+
+Executed end to end on the real UCI HAR dataset (downloaded by `scripts/download_dataset.py`) on a Modal CPU container
+with `sensor-benchmark run-all --run-name full-benchmark`. The run report, figures and metrics are committed under
+`results/full-benchmark/`; the dataset itself is downloaded, not committed.
+
+| Model | CV macro-F1 (21 training subjects, StratifiedGroupKFold) |
+|-------|-----|
+| Majority-class baseline | 0.052 ± 0.001 |
+| Decision tree | 0.828 ± 0.012 |
+| Random forest | 0.898 ± 0.015 |
+| RBF SVM | 0.916 ± 0.010 |
+| **Logistic regression (selected)** | **0.921 ± 0.003** |
+
+The simplest model within 0.005 of the best CV score was selected using training subjects only. It was then evaluated
+**once** on the 9 official held-out test subjects (2,947 windows): **accuracy 0.9545, balanced accuracy 0.9532,
+macro-F1 0.9544** (95% subject-cluster bootstrap interval for macro-F1: 0.925–0.977, which is wide because there are
+only 9 test subjects). Fit time 0.83 s.
+
+![Model comparison across cross-validation folds](results/full-benchmark/figures/cv_model_comparison.png)
+
+![Normalised confusion matrix on the held-out test subjects](results/full-benchmark/figures/confusion_normalized.png)
+
+The full run report is `results/full-benchmark/EVALUATION_REPORT.md`.
+
+Fixed while running on real data: `scripts/download_dataset.py` now unpacks the nested `UCI HAR Dataset.zip` that UCI
+ships inside the downloaded archive.

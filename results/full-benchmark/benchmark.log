@@ -1,0 +1,18 @@
+2023-11-09 05:11:38,620 INFO sensor_classifier.cli: Training-only EDA created at /repo/results/full-benchmark
+2023-11-09 05:11:46,411 INFO sensor_classifier.evaluation.cross_validation: dummy fold 1: macro F1 0.0532, accuracy 0.1897
+2023-11-09 05:11:46,815 INFO sensor_classifier.evaluation.cross_validation: dummy fold 2: macro F1 0.0520, accuracy 0.1850
+2023-11-09 05:11:47,196 INFO sensor_classifier.evaluation.cross_validation: dummy fold 3: macro F1 0.0515, accuracy 0.1829
+2023-11-09 05:11:48,022 INFO sensor_classifier.evaluation.cross_validation: logistic_regression fold 1: macro F1 0.9243, accuracy 0.9261
+2023-11-09 05:11:48,876 INFO sensor_classifier.evaluation.cross_validation: logistic_regression fold 2: macro F1 0.9191, accuracy 0.9208
+2023-11-09 05:11:49,718 INFO sensor_classifier.evaluation.cross_validation: logistic_regression fold 3: macro F1 0.9193, accuracy 0.9208
+2023-11-09 05:11:52,112 INFO sensor_classifier.evaluation.cross_validation: decision_tree fold 1: macro F1 0.8274, accuracy 0.8314
+2023-11-09 05:11:54,776 INFO sensor_classifier.evaluation.cross_validation: decision_tree fold 2: macro F1 0.8159, accuracy 0.8280
+2023-11-09 05:11:57,262 INFO sensor_classifier.evaluation.cross_validation: decision_tree fold 3: macro F1 0.8403, accuracy 0.8471
+2023-11-09 05:12:03,583 INFO sensor_classifier.evaluation.cross_validation: random_forest fold 1: macro F1 0.8873, accuracy 0.8912
+2023-11-09 05:12:10,360 INFO sensor_classifier.evaluation.cross_validation: random_forest fold 2: macro F1 0.8918, accuracy 0.8960
+2023-11-09 05:12:16,798 INFO sensor_classifier.evaluation.cross_validation: random_forest fold 3: macro F1 0.9161, accuracy 0.9216
+2023-11-09 05:12:20,635 INFO sensor_classifier.evaluation.cross_validation: rbf_svm fold 1: macro F1 0.9246, accuracy 0.9268
+2023-11-09 05:12:24,811 INFO sensor_classifier.evaluation.cross_validation: rbf_svm fold 2: macro F1 0.9052, accuracy 0.9112
+2023-11-09 05:12:28,601 INFO sensor_classifier.evaluation.cross_validation: rbf_svm fold 3: macro F1 0.9186, accuracy 0.9220
+2023-11-09 05:12:30,889 INFO sensor_classifier.cli: Selected from CV: logistic_regression; files saved to /repo/results/full-benchmark
+2023-11-09 05:12:51,459 INFO sensor_classifier.cli: Held-out test evaluation completed ONCE, macro_f1 0.9544

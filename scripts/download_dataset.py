@@ -36,6 +36,16 @@ def main() -> None:
                 if not out.is_relative_to(destination.resolve()):
                     raise ValueError("Unsafe archive path")
             zip_file.extractall(destination)
+        # UCI wraps the dataset in a second zip ("UCI HAR Dataset.zip"); unpack it with the same safety check.
+        nested = destination / "UCI HAR Dataset.zip"
+        if nested.exists():
+            with zipfile.ZipFile(nested) as inner:
+                for member in inner.infolist():
+                    out = (destination / member.filename).resolve()
+                    if not out.is_relative_to(destination.resolve()):
+                        raise ValueError("Unsafe archive path")
+                inner.extractall(destination)
+            nested.unlink()
         print(f"Archive SHA256: {digest}; extracted into {destination}")
 
 
